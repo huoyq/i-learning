@@ -1,3 +1,4 @@
+```java
 public int compareVersion(String version1, String version2) {
 
     // 将字符串按点好分割，生成数组和每位进行比较
@@ -20,3 +21,4 @@ public int compareVersion(String version1, String version2) {
     }
     return 0;
 }
+```
