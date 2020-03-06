@@ -28,17 +28,21 @@ public int numWays2(int n) {
     return dp[n];
 }
 
-// 动态规划空间复杂度O(1)
+// 动态规划空间复杂度O(1),与上面的方法思路一样，只是重复利用a,b,sum三个变量进行求和
+// 我们只关心f(n-1)和f(n-2),其他的值不需要用数组存储
 public static int numWays3(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    }
     int a = 1; // 相当于f(0) = 1;
     int b = 1; // 相当于f(1) = 1;
-    int sum;
-    for (int i = 1; i <= n; i++) {
+    int sum = 0;
+    for (int i = 2; i <= n; i++) {
         sum = (a + b) % 1000000007;
         a = b;
         b = sum;
     }
-    return a;
+    return sum;
 }
 
 ```
