@@ -1,2 +1,2 @@
-# leetcode
-leetcode刷题之路
+# java学习之路
+java学习之路
