@@ -1,0 +1,23 @@
+```java
+// 方法一：暴力枚举，两次遍历
+// 方法二：一次遍历
+// 方法三：待补充
+public int maxProfit(int[] prices) {
+    if (prices.length < 2) {
+        return 0;
+    }
+    // 遇到的最低股价，初始默认为第一天
+    int min = prices[0];
+    // 最大利润
+    int res = 0;
+    for (int i = 1;i < prices.length;i++) {
+        // 遍历过程中不断更新最大利润
+        res = Math.max(res, prices[i] - min);
+        // 当遇到一个更低的股价时，更新min，使用这个值进行后面的利润计算
+        // 因为使用这个最新的min可定会比使用之前的min能得到更高的利润
+        // 但是不一定会比之前的res大
+        min = Math.min(min, prices[i]);
+    }
+    return res;
+}
+```
